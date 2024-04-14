@@ -1,5 +1,5 @@
-@Library('shared-library')
+@Library('shared-library') _
 
 env.COMPONENT="frontend"
 
-frontend(COMPONENT)
+angular(COMPONENT)
