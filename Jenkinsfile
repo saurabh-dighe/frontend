@@ -2,4 +2,4 @@
 
 env.COMPONENT="frontend"
 
-angular(COMPONENT)
+angular()
