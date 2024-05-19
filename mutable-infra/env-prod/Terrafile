@@ -1,0 +1,3 @@
+app:
+    source:  "git::https://github.com/saurabh-dighe/tf-module-multable-app.git"
+    version: "main"
