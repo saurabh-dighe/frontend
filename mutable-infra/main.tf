@@ -1,4 +1,4 @@
-module "app" {
+module "frontend" {
   source                 = "./vendor/modules/app"
   ENV                    = var.ENV
   INTERNAL               = var.INTERNAL
