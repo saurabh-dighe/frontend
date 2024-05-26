@@ -4,6 +4,6 @@ env.COMPONENT="frontend"
 
 env.APPTYPE="angular"
 
-env.NEXUS_URL= "172.31.27.216"
+env.NEXUS_URL= "172.31.39.180"
 
 angular()
