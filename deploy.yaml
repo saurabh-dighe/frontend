@@ -90,13 +90,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - hosts:
-      http: af28692f447504b808b1706a36f56690-1706872449.us-east-1.elb.amazonaws.com
-      paths:
-      - path: "/"
-        pathType: Prefix
-        backend:
-          service:
-            name: frontend-svc
-            port:
-              number: 80
+  - hosts: af28692f447504b808b1706a36f56690-1706872449.us-east-1.elb.amazonaws.com
+    http: 
+    paths:
+    - path: "/"
+      pathType: Prefix
+      backend:
+        service:
+          name: frontend-svc
+          port:
+            number: 80
