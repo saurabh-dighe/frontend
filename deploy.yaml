@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 992382386864.dkr.ecr.us-east-1.amazonaws.com/frontend:307
+        image: 992382386864.dkr.ecr.us-east-1.amazonaws.com/frontend:300
         ports:
         - containerPort: 80
         # #livenessProbe
