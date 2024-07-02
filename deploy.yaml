@@ -79,3 +79,24 @@ spec:
       target:
         type: Utilization
         averageUtilization: 70
+---
+#Ingress controller object
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend-ingress
+  # annotations:
+  #   nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - hosts:
+      http: af28692f447504b808b1706a36f56690-1706872449.us-east-1.elb.amazonaws.com
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-svc
+            port:
+              number: 80
