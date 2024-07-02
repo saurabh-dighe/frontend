@@ -81,7 +81,7 @@ spec:
         averageUtilization: 70
 ---
 #Ingress controller object
-apiVersion: v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frontend-ingress
@@ -90,7 +90,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - hosts: af28692f447504b808b1706a36f56690-1706872449.us-east-1.elb.amazonaws.com
+  - host: af28692f447504b808b1706a36f56690-1706872449.us-east-1.elb.amazonaws.com
     http: 
     paths:
     - path: "/"
