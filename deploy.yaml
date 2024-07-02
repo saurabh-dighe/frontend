@@ -97,6 +97,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: catalogue-svc
+            name: frontend-svc
             port:
               number: 80
