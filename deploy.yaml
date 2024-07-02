@@ -81,7 +81,7 @@ spec:
         averageUtilization: 70
 ---
 #Ingress controller object
-apiVersion: networking.k8s.io/v1
+apiVersion: v1
 kind: Ingress
 metadata:
   name: frontend-ingress
