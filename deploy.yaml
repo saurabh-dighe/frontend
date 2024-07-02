@@ -23,20 +23,20 @@ spec:
         image: 992382386864.dkr.ecr.us-east-1.amazonaws.com/frontend:300
         ports:
         - containerPort: 80
-        # #livenessProbe
-        # livenessProbe:
-        #   httpGet:
-        #     path: /health
-        #     port: 80
-        #   initialDelaySeconds: 10
-        #   periodSeconds: 10
-        # #Readiness probe
-        # readinessProbe:
-        #   httpGet:
-        #     path: /health
-        #     port: 80
-        #   initialDelaySeconds: 10
-        #   periodSeconds: 10
+        #livenessProbe
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        #Readiness probe
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
         resources:
           requests:
             memory: "128Mi"
