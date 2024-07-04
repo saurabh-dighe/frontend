@@ -114,8 +114,7 @@ metadata:
 spec:
   ingressClassName: nginx 
   rules:
-  - host: afda187618de34eafbe07a9b6aab42a3-901934991.us-east-1.elb.amazonaws.com
-    http:
+  - http:
       paths:
       - path: "/catalogue"
         pathType: Prefix
