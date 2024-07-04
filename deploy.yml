@@ -102,3 +102,25 @@ spec:
             name: frontend-svc
             port:
               number: 80
+
+--- 
+# Ingress Object 
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: catalogue-ingress
+  # annotations:
+  #   service.beta.kubernetes.io/aws-load-balancer-type: nlb
+spec:
+  ingressClassName: nginx 
+  rules:
+  - host: afda187618de34eafbe07a9b6aab42a3-901934991.us-east-1.elb.amazonaws.com
+    http:
+      paths:
+      - path: "/catalogue"
+        pathType: Prefix
+        backend:
+          service:
+            name: catalogue-svc
+            port:
+              number: 8080
