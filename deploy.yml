@@ -130,7 +130,7 @@ spec:
             name: shipping-svc
             port:
               number: 8080
-      - path: /user
+      - path: /login
         pathType: Prefix
         backend:
           service:
