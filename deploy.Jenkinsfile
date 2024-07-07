@@ -9,20 +9,18 @@ pipeline {
     }
     parameters {
         choice(name: 'ENV', choices: ['dev', 'prod'], description: 'Select the environment')
-        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Action to perform')
     }
     stages {
         stage('Deploying Frontend'){
             steps{
                 dir('VPC') {
-                    sh "rm -rf ./VPC/*"
-                git branch: 'main', url: 'https://github.com/saurabh-dighe/terraform-vpc.git'
+                git branch: 'main', url: 'https://github.com/saurabh-dighe/frontend.git'
                     sh '''
-                        rm -rf
-                        terrafile -f ./env-dev/Terrafile
-                        terraform init --backend-config=env-${ENV}/backend-${ENV}.tfvars -reconfigure
-                        terraform plan -var-file=env-${ENV}/${ENV}.tfvars -var ENV=${ENV}
-                        terraform ${ACTION} -auto-approve -var-file=env-${ENV}/${ENV}.tfvars 
+                        echo "Updating kubeconfig"
+                        aws eks update-kubeconfig --name dev-eks-cluster
+                        kubectl apply -f deploy.yml
+                        sleep 20
+                        kubectl get pods
                     '''
                 }
             }
